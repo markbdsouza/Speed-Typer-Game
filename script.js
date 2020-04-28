@@ -52,7 +52,7 @@ function countDown() {
     } else {
       clearInterval(countDownInterval);
       wordInput.removeEventListener('input', checkWord);
-      endGame((isTimeOver = true));
+      endGame(true);
     }
     updateBodyBasedOnTime(timeLeft);
   }, 1000);
