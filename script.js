@@ -1,4 +1,4 @@
-import { typerSettings } from './wordHandling';
+import { typerSettings } from './wordHandling.js';
 
 const difficultyBar = document.getElementById('settings');
 const settingBtn = document.getElementById('setting-btn');
@@ -122,7 +122,6 @@ function init() {
   difficulty = difficultySelect.value;
   wordInput.disabled = false;
   wordContainer.innerHTML = '';
-  console.log(gameType);
   options = typerSettings[gameType].difficulty || defaultOptions;
   if (gameType !== 'wordTyper') {
     const isHard = difficulty === 'hard';
@@ -132,7 +131,6 @@ function init() {
 }
 
 function startGame() {
-  console.log('+', paragraphWords);
   init();
   updateScoreinDOM();
   if (gameType === 'wordTyper') {
