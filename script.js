@@ -110,7 +110,7 @@ function loadPara() {
       wordsDisplayed[2] || ''
     } </h1>`;
   } else if (paraWordIndex === paragraphWords.length) {
-    endGame((isTimeOver = false));
+    endGame(false);
   }
 }
 
