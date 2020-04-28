@@ -147,7 +147,7 @@ function startGame() {
 function restartGame() {
   wordInput.disabled = true;
   wordInput.value = '';
-  loadEndContainerToDOM((isEnd = false));
+  loadEndContainerToDOM(false);
 }
 
 function endGame(isTimeOver = true) {
@@ -174,7 +174,7 @@ function loadEndContainerToDOM(isEnd, score, isOutOfTime) {
   endContainer.classList.add('visible');
 }
 
-loadEndContainerToDOM((isEnd = false));
+loadEndContainerToDOM(false);
 difficultySelect.addEventListener('change', difficultyChanged);
 gameTypeSelect.addEventListener('change', gameTypeChanged);
 settingBtn.addEventListener('click', () => {
