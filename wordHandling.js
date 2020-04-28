@@ -23,7 +23,7 @@ export const typerSettings = {
       return array;
     },
     returnParagraphArray(isHard = false) {
-      jumbledLetters = this.shuffleArray(this.value.split(' '));
+      let jumbledLetters = this.shuffleArray(this.value.split(' '));
       return isHard ? jumbledLetters : this.value.split(' ');
     },
   },
