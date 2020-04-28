@@ -14,6 +14,7 @@ const startingTime = 10;
 const defaultOptions = { easy: 3, medium: 2, hard: 1 };
 
 let paragraphWords;
+let wordsDisplayed;
 let countDownInterval;
 let wordPicked;
 let timeLeft;
@@ -162,15 +163,18 @@ function loadEndContainerToDOM(isEnd, score, isOutOfTime) {
       isOutOfTime ? `Time ran out!` : `Game Over`
     }</h3> You have scored a score of ${score} points in ${difficulty} difficulty. 
     ${isOutOfTime ? `Try harder!` : `Nice Job!`} 
-    <button onClick='startGame()'> Play Again </button>`;
+    <button class='start'> Play Again </button>`;
   } else {
     endContainer.innerHTML = ` <h3>Welcome to the Speed Typing game</h3> 
     <div> There are 3 modes of gameplay with 3 difficulty levels. All modes have a countdown timer. 
     Depending on the mode & difficulty chosen, typing the right word will add seconds to the clock. 
-    Let's see how quickly you can type!
+    <h4>
+    Let's see how quickly you can type!</h4>
     </div>    
-    <button onClick='startGame()'> Play </button>`;
+    <button class='start'> Play </button>`;
   }
+  const startBtn = document.querySelector('.start');
+  startBtn.addEventListener('click', startGame);
   endContainer.classList.add('visible');
 }
 
